@@ -3,7 +3,7 @@ name: Deploy NRD Frontend
 on:
   push:
     branches:
-      - main
+      - 1778-migrate-from-webpack-to-vite
 
 defaults:
   run:
@@ -18,6 +18,7 @@ jobs:
     steps:
       - name: Checkout Repo Code
         uses: actions/checkout@v2
+        with: 1778-migrate-from-webpack-to-vite
 
       #    - name: Setup Python
       #      uses: actions/setup-python@v2
