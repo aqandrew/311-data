@@ -18,7 +18,8 @@ jobs:
     steps:
       - name: Checkout Repo Code
         uses: actions/checkout@v2
-        with: 1778-migrate-from-webpack-to-vite
+        with:
+          ref: 1778-migrate-from-webpack-to-vite
 
       #    - name: Setup Python
       #      uses: actions/setup-python@v2
