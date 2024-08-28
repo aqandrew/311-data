@@ -14,8 +14,6 @@ import App from '@root/App';
 // https://mui.com/material-ui/customization/typography/#default-values
 window.theme = theme;
 
-console.log('hello from Vite branch!');
-
 ReactDOM.render(
   <Provider store={store}>
     <DbProvider>
@@ -29,3 +27,6 @@ ReactDOM.render(
   </Provider>,
   document.getElementById('root'),
 );
+
+// hot module replacement during development
+if (module.hot) module.hot.accept();
