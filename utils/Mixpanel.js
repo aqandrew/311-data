@@ -1,13 +1,12 @@
 import mixpanel from 'mixpanel-browser';
 
-const token = import.meta.env.PROD
-  ? import.meta.env.MIXPANEL_TOKEN_PROD
-  : import.meta.env.MIXPANEL_TOKEN_DEV;
+const envCheck = process.env.NODE_ENV === 'production';
+const token = envCheck ? process.env.MIXPANEL_TOKEN_PROD : process.env.MIXPANEL_TOKEN_DEV;
 
 // Set MIXPANEL_ENABLED env variable to:
 //   1 or greater to enable Mixpanel logging
 //   0 to disable Mixpanel logging
-const mixpanelEnabled = import.meta.env.MIXPANEL_ENABLED > 0;
+const mixpanelEnabled = process.env.MIXPANEL_ENABLED > 0;
 
 if (mixpanelEnabled) {
   mixpanel.init(token);

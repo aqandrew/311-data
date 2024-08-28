@@ -9,7 +9,7 @@ import rootSaga from './rootSaga';
 const sagaMiddleware = createSagaMiddleware();
 const middlewares = [sagaMiddleware];
 
-if (import.meta.env.DEV) {
+if (process.env.NODE_ENV === 'development') {
   const logger = createLogger({
     collapsed: (getState, action, logEntry) => !logEntry.error,
   });
